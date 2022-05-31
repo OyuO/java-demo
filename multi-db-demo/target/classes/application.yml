@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://192.168.30.103:5432/robot
+    username: postgres
+    password: qihaixing
+
+mybatis:
+  # xml文件路径
+  mapper-locations: classpath:./mapper/*.xml
+  configuration:
+    # 开启下划线转驼峰
+    map-underscore-to-camel-case: on

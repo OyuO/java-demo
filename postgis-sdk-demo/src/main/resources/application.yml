@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    #    driver-class-name: net.postgis.jdbc.DriverWrapper
+    #    url: jdbc:postgresql_postGIS://114.132.245.36:5432/weve
+    url: jdbc:postgresql://114.132.245.36:5432/weve
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 123456654321
+
+mybatis:
+  mapper-locations: classpath:./mapper/*.xml
+  type-handlers-package: org.zy.postgis.handler

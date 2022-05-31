@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zy.postgis.mapper.TestMapper">
+
+    <insert id="insert">
+        insert into test.gis(point, uuid)
+        values (#{1}, #{2})
+    </insert>
+    <insert id="insertFloatArray">
+        insert into test.gis(float) values (#{array})
+    </insert>
+
+
+    <select id="select" resultType="org.zy.postgis.model.ResultDTO">
+        select id, point
+        from test.gis
+    </select>
+
+</mapper>

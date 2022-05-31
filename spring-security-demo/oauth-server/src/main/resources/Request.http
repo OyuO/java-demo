@@ -1,0 +1,30 @@
+# curl --location --request POST 'localhost:8080/oauth/token'
+#--header 'Authorization: Basic bWVzc2FnaW5nLWNsaWVudDpzZWNyZXQ='
+#--form 'username="admin"'
+#--form 'password="password"'
+#--form 'grant_type="password"'
+#--form 'scope="message.read"'
+POST localhost:8080/oauth/token
+Authorization: Basic bWVzc2FnaW5nLWNsaWVudDpzZWNyZXQ=
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="username"
+
+"admin"
+--WebAppBoundary
+Content-Disposition: form-data; name="password"
+
+"password"
+--WebAppBoundary
+Content-Disposition: form-data; name="grant_type"
+
+"password"
+--WebAppBoundary
+Content-Disposition: form-data; name="scope"
+
+"message.write"
+--WebAppBoundary--
+
+###
+

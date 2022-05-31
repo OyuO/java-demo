@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package qhx.proto.weve.update;
+
+option java_multiple_files = true;
+
+// 印鉴
+message Seal {
+    // HASH值
+    bytes hash = 1;
+
+    // 签名公钥
+    bytes signature_pubkey = 2;
+
+    // 签名
+    bytes signature = 3;
+}
+
+// 信封
+message Envelope {
+    // 信封 Magic ([31:16] "QU", [15:0] envelope protocol version)
+    fixed32 magic = 1;
+
+    // 目的地址
+    fixed64 to = 2;
+
+    // 来源地址
+    fixed64 from = 3;
+
+    // 信封时间戳
+    fixed64 timestamp = 4;
+
+    // 信封序号
+    fixed64 serial_no = 5;
+
+    // 内容类型 ([31:20] device_type, [19:4] comp_type, [3:0] payload_type)
+    fixed32 payload_type = 6;
+
+    // 内容大小
+    fixed32 payload_size = 7;
+
+    // 信封印鉴 seal(magic + to + from + timestamp + serial_no + payload_type + payload_size + payload_seal.signature)
+    Seal envelope_seal = 8;
+
+    // 内容印鉴 seal(payload)
+    Seal payload_seal = 9;
+
+    // 内容
+    bytes payload = 10;
+}
