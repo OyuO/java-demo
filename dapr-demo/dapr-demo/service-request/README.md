@@ -1,0 +1,1 @@
+`dapr run --app-id request -- java -jar request-jar-with-dependencies.jar`

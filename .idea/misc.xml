@@ -14,6 +14,8 @@
         <option value="$PROJECT_DIR$/minio-demo/pom.xml" />
         <option value="$PROJECT_DIR$/dynamic-proxy-demo/dynamic-proxy-demo/pom.xml" />
         <option value="$PROJECT_DIR$/jni-demo/jni-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/nats-demo/nats-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mqtt/mqtt-sdk/pom.xml" />
       </list>
     </option>
   </component>
