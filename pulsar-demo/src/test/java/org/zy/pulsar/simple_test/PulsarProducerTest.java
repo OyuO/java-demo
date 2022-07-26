@@ -10,14 +10,14 @@ public class PulsarProducerTest {
 
 //    public static final String TOPIC = "persistent://my_tenant/my_namespace/my_topic2";
 
-    public static final String HOST = "pulsar://localhost:6650";
+    public static final String HOST = "pulsar://192.168.30.103:6650";
 
 
-    public static final String TOPIC = "my_topic";
+    public static final String TOPIC = "test_topic";
 
     @Test
     public void produce() throws PulsarClientException {
-        var pulsarClient = PulsarClient.builder().serviceUrl(HOST).authentication(AuthenticationFactory.token("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiJ9.iYYrrbYysQMpyBJXamA_XpVglRVKNXxq7MjotUj7Wfs")).build();
+        var pulsarClient = PulsarClient.builder().serviceUrl(HOST).build();
         var producer = pulsarClient.newProducer(Schema.STRING).topic(TOPIC).create();
         producer.send("hello java API pulsar");
         producer.close();

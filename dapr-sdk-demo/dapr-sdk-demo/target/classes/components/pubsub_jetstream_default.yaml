@@ -1,0 +1,11 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+  namespace: default
+spec:
+  type: pubsub.jetstream
+  version: v1
+  metadata:
+    - name: natsURL
+      value: "nats://qhx:qhx@192.168.30.103:4222"

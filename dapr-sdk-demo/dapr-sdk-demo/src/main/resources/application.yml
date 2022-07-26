@@ -1,0 +1,5 @@
+server:
+  port: 3000
+dapr:
+  sub:
+    name: 123
